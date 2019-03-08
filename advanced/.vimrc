@@ -44,3 +44,10 @@ set expandtab
 " use JavaScript for Vue template.
 "==============================================================================
 autocmd BufNewFile,BufRead *.vue set syntax=html
+
+"==============================================================================
+" vim-vue
+"==============================================================================
+" install vim-vue syntax highlighting
+" cd ~/.vim/bundle && \
+" git clone https://github.com/posva/vim-vue.git
