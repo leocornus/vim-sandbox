@@ -19,3 +19,12 @@ set tabstop=4
 set shiftwidth=4
 set autoindent
 set expandtab
+
+"==============================================================================
+" set up vim folding to using manual folding:
+" zf - create folding
+" zc - collapse folding
+" zo - open (expand) folding
+" zd - delete folding
+"==============================================================================
+set foldmethod=manual
