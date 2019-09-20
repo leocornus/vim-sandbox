@@ -16,3 +16,8 @@ git clone https://github.com/tpope/vim-fugitive.git
 # install vim-vue syntax highlighting
 cd ~/.vim/bundle
 git clone https://github.com/posva/vim-vue.git
+
+#=================================
+# install vim-pug syntax highlighting
+cd ~/.vim/bundle
+git clone git://github.com/digitaltoad/vim-pug.git
