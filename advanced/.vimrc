@@ -41,9 +41,9 @@ set autoindent
 set expandtab
 
 "==============================================================================
-" use JavaScript for Vue template.
+" use JavaScript html for Vue template.
 "==============================================================================
-autocmd BufNewFile,BufRead *.vue set syntax=html
+"autocmd BufNewFile,BufRead *.vue set syntax=html
 
 "==============================================================================
 " vim-vue
