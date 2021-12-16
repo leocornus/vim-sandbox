@@ -2,7 +2,14 @@
 # some memos and tips for vim commands
 #
 
-#########
+##############################################################################
+# buffer navigation
+#
+
+Ctrl-o to the previous buffer.
+Ctrl-i to the next buffer
+
+##############################################################################
 # some tips for the grep.
 #
 
@@ -14,5 +21,21 @@
 # load the match file from the quickfix list panel (:copen)
 :grep -lr --include=*.java --exclude="*/target/*" 'class MLotMessage' .
 
+# find all methods in current file:
+:vimgrep /public\|protected\|private\s\w\s\w(/ %
+
 # Exampl to find a file and exclude a the foler node_modules.
 :!find . -name *.md ! -path "*/node_modules/*"
+
+# read the output to current line.
+:r!find . -name *.md ! -path "*/node_modules/*"
+
+##############################################################################
+# vim window management.
+#
+
+# resize the current window
+:resize +5
+
+# resize the current window vertically.
+:vertical resize +20
