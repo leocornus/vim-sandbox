@@ -55,7 +55,11 @@ copen - load the quickfix to show all matches
 
 # create map to grep current word.
 # we need the double escape "\\" in map!
+# this map will hook "gr" to search all java files to find the class and interface defination.
 :nnoremap gr :grep -rE --include=*.java --exclude='*/target/*' '(class\\|interface) <cword>' .<CR>
+
+# map to find all method in current java file.
+:nnoremap jm :vimgrep /public\\|protected\\|private\s\w\s\w(/ %
 
 ##############################################################################
 #### vim window management.
