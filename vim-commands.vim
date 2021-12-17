@@ -20,10 +20,17 @@ Ctrl-i - to the next buffer
 
 ##############################################################################
 #### some tips for the grep.
+# some good post to read:
+# - https://phoenixnap.com/kb/grep-multiple-strings
 
 # Example to ind a java class and exclude all java files from the target folder.
 # There are some generated java source code in the target folder.
 :grep -r --include=*.java --exclude="*/target/*" 'class MLotMessage' .
+
+# search bothe class and interface
+# using the extended regular expressions, -E
+grep -rE --include=*.java --exclude='*/target/*' '(interface\|class)\sLotService' .
+grep -rE --include=*.java --exclude='*/target/*' '(interface\|class) LotService' .
 
 # if we put the -l option, the grep search result will NOT be able to
 # load the match file from the quickfix list panel (:copen)
@@ -42,6 +49,13 @@ copen - load the quickfix to show all matches
 
 # read the output to current line.
 :r!find . -name *.md ! -path "*/node_modules/*"
+
+##############################################################################
+#### map 
+
+# create map to grep current word.
+# we need the double escape "\\" in map!
+:nnoremap gr :grep -rE --include=*.java --exclude='*/target/*' '(class\\|interface) <cword>' .<CR>
 
 ##############################################################################
 #### vim window management.
