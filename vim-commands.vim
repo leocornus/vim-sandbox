@@ -3,14 +3,14 @@
 #
 
 ##############################################################################
-# buffer navigation
+#### buffer navigation
 #
 
 Ctrl-o to the previous buffer.
 Ctrl-i to the next buffer
 
 ##############################################################################
-# some tips for the grep.
+#### some tips for the grep.
 #
 
 # Example to ind a java class and exclude all java files from the target folder.
@@ -24,6 +24,11 @@ Ctrl-i to the next buffer
 # find all methods in current file:
 :vimgrep /public\|protected\|private\s\w\s\w(/ %
 
+# navigate iterate through the search result:
+cn - next match
+cp - previous match
+copen - load the quickfix to show all matches
+
 # Exampl to find a file and exclude a the foler node_modules.
 :!find . -name *.md ! -path "*/node_modules/*"
 
@@ -31,7 +36,7 @@ Ctrl-i to the next buffer
 :r!find . -name *.md ! -path "*/node_modules/*"
 
 ##############################################################################
-# vim window management.
+#### vim window management.
 #
 
 # resize the current window
@@ -39,3 +44,10 @@ Ctrl-i to the next buffer
 
 # resize the current window vertically.
 :vertical resize +20
+
+##############################################################################
+#### fold and expand
+
+zf - create fold, it can be used in virtual mode,
+zc - collapse fold
+zo - expand fold
