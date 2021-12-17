@@ -9,9 +9,17 @@
 Ctrl-o - to the previous buffer.
 Ctrl-i - to the next buffer
 
+
+##############################################################################
+#### Search in current buffer
+
+* - will search the current word forward
+/# - will search the current word backward
+/ - will search the user input forward
+? - will search the user input backward
+
 ##############################################################################
 #### some tips for the grep.
-#
 
 # Example to ind a java class and exclude all java files from the target folder.
 # There are some generated java source code in the target folder.
@@ -37,7 +45,6 @@ copen - load the quickfix to show all matches
 
 ##############################################################################
 #### vim window management.
-#
 
 # resize the current window
 :resize +5
