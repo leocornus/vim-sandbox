@@ -4,7 +4,6 @@
 
 ##############################################################################
 #### buffer navigation
-#
 
 Ctrl-o - to the previous buffer.
 Ctrl-i - to the next buffer
@@ -53,13 +52,29 @@ copen - load the quickfix to show all matches
 ##############################################################################
 #### map 
 
+# map will show current map function, or bookmark
+:map
+
+# NOTE: The ending "<CR>" will add the return keyboard at the end.
+# Without "<CR>" will hwlp debug the map.
+
 # create map to grep current word.
 # we need the double escape "\\" in map!
-# this map will hook "gr" to search all java files to find the class and interface defination.
-:nnoremap gr :grep -rE --include=*.java --exclude='*/target/*' '(class\\|interface) <cword>' .<CR>
+# this map will hook "gs" to search all java files to find the class and interface defination.
+:nnoremap gs :grep -rE --include=*.java --exclude='*/target/*' '<cword>' .<CR>
+# map "gc" to the grep search which has the class/interface definition
+:nnoremap gc :grep -rE --include=*.java --exclude='*/target/*' '(class\\|interface) <cword>' .<CR>
 
-# map to find all method in current java file.
-:nnoremap jm :vimgrep /public\\|protected\\|private\s\w\s\w(/ %
+# map "gm" to find all method in current java file.
+:nnoremap gm :vimgrep /public\\|protected\\|private\s\w\s\w(/ %<CR>
+
+# map "gf" to find the file match the current word, exclude the "target" folder.
+# we don't need escapt the first "!"
+:nnoremap gf :!find . -name <cword>.java \! -path "*/target/*"<CR>
+
+# unmap will remove the map.
+:unmap gf
+:unmap gc
 
 ##############################################################################
 #### vim window management.
