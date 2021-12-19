@@ -8,7 +8,6 @@
 Ctrl-o - to the previous buffer.
 Ctrl-i - to the next buffer
 
-
 ##############################################################################
 #### Search in current buffer
 
