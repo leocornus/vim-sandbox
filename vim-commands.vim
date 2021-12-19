@@ -61,16 +61,21 @@ copen - load the quickfix to show all matches
 # create map to grep current word.
 # we need the double escape "\\" in map!
 # this map will hook "gs" to search all java files to find the class and interface defination.
-:nnoremap gs :grep -rE --include=*.java --exclude='*/target/*' '<cword>' .<CR>
+:nnoremap gs :grep -rE --include=*.java --exclude='*/target/*' '<cword>' .
+:nnoremap gS :grep -rE --include=*.java --exclude='*/target/*' '<cword>' .<CR>
 # map "gc" to the grep search which has the class/interface definition
 :nnoremap gc :grep -rE --include=*.java --exclude='*/target/*' '(class\\|interface) <cword>' .<CR>
 
 # map "gm" to find all method in current java file.
+# we need the "\\" here!
 :nnoremap gm :vimgrep /public\\|protected\\|private\s\w\s\w(/ %<CR>
 
 # map "gf" to find the file match the current word, exclude the "target" folder.
 # we don't need escapt the first "!"
 :nnoremap gf :!find . -name <cword>.java \! -path "*/target/*"<CR>
+
+# map "ge" to edit the file name
+:nnoremap ge :e **/*<C-R><C-W>
 
 # map "sb" to generate the buffer search pattern:
 # the "<C-R><C-W>" is the same with "<cword>" in here.
