@@ -72,6 +72,13 @@ copen - load the quickfix to show all matches
 # we don't need escapt the first "!"
 :nnoremap gf :!find . -name <cword>.java \! -path "*/target/*"<CR>
 
+# map "sb" to generate the buffer search pattern:
+# the "<C-R><C-W>" is the same with "<cword>" in here.
+# The difference is the command such as "grep" will expand "<cword>" to current word.
+:nnoremap sb :b <C-R><C-W>
+
+####################
+# How to unmap a map.
 # unmap will remove the map.
 :unmap gf
 :unmap gc
