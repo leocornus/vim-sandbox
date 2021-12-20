@@ -16,6 +16,9 @@ Ctrl-i - to the next buffer
 / - will search the user input forward
 ? - will search the user input backward
 
+# search and replace: "gc" global and confirm
+:%s/from string/to string/gc
+
 ##############################################################################
 #### some tips for the grep.
 # some good post to read:
@@ -61,9 +64,12 @@ copen - load the quickfix to show all matches
 # we need the double escape "\\" in map!
 # this map will hook "gs" to search all java files to find the class and interface defination.
 :nnoremap gs :grep -rE --include=*.java --exclude='*/target/*' '<cword>' .
+:nnoremap gs :grep -rE --include=*.java --exclude='*/target/*' '<C-R><C-W>' .
 :nnoremap gS :grep -rE --include=*.java --exclude='*/target/*' '<cword>' .<CR>
 # map "gc" to the grep search which has the class/interface definition
-:nnoremap gc :grep -rE --include=*.java --exclude='*/target/*' '(class\\|interface) <cword>' .<CR>
+:nnoremap gc :grep -rE --include=*.java --exclude='*/target/*' '(class\\|interface) <cword>' .
+:nnoremap gc :grep -rE --include=*.java --exclude='*/target/*' '(class\\|interface) <C-R><C-W>' .
+:nnoremap gC :grep -rE --include=*.java --exclude='*/target/*' '(class\\|interface) <cword>' .<CR>
 
 # map "gm" to find all method in current java file.
 # we need the "\\" here!
@@ -71,7 +77,9 @@ copen - load the quickfix to show all matches
 
 # map "gf" to find the file match the current word, exclude the "target" folder.
 # we don't need escapt the first "!"
-:nnoremap gf :!find . -name <cword>.java \! -path "*/target/*"<CR>
+:nnoremap gf :!find . -name <cword>.java \! -path "*/target/*"
+:nnoremap gf :!find . -name <C-R><C-W>.java \! -path "*/target/*"
+:nnoremap gF :!find . -name <cword>.java \! -path "*/target/*"<CR>
 
 # map "ge" to edit the file name
 :nnoremap ge :e **/*<C-R><C-W>
@@ -81,6 +89,9 @@ copen - load the quickfix to show all matches
 # The difference is the command such as "grep" will expand "<cword>" to current word.
 :nnoremap sb :b <C-R><C-W>
 
+# map "sc" to search current word in current buffer.
+:nnoremap sc :vimgrep /<C-R><C-W>/ %
+
 ####################
 # How to unmap a map.
 # unmap will remove the map.
@@ -89,6 +100,11 @@ copen - load the quickfix to show all matches
 
 ##############################################################################
 #### vim window management.
+
+# split buffer
+:sp
+# vertically split buffer
+:vsp
 
 # resize the current window
 :resize +5
@@ -102,3 +118,15 @@ copen - load the quickfix to show all matches
 zf - create fold, it can be used in virtual mode,
 zc - collapse fold
 zo - expand fold
+
+##############################################################################
+#### session management
+
+# save session.
+# maps will b saved when save session.
+:mksession ~/.vim/session-name.vim
+# override the existing session file.
+:mksession! ~/.vim/session-name.vim
+
+# load existing session.
+:sourc ~/.vim/session-name.vim
