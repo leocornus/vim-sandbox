@@ -74,6 +74,8 @@ copen - load the quickfix to show all matches
 # map "gm" to find all method in current java file.
 # we need the "\\" here!
 :nnoremap gm :vimgrep /public\\|protected\\|private\s\w\s\w(/ %<CR>
+:nnoremap gm :grep -E '(public\\|protected\\|private) ' %
+:nnoremap gM :grep -E '(public\\|protected\\|private) ' %<CR>
 
 # map "gf" to find the file match the current word, exclude the "target" folder.
 # we don't need escapt the first "!"
