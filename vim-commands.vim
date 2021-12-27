@@ -12,7 +12,7 @@ Ctrl-i - to the next buffer
 #### Search in current buffer
 
 * - will search the current word forward
-/# - will search the current word backward
+# - will search the current word backward
 / - will search the user input forward
 ? - will search the user input backward
 
