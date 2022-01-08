@@ -40,6 +40,10 @@ grep -rE --include=*.java --exclude='*/target/*' '(interface\|class) LotService'
 # find all methods in current file:
 :vimgrep /public\|protected\|private\s\w\s\w(/ %
 
+# find all sections in an ini file
+# buildout config .cfg file is using ini format.
+:vimgrep /\[.\+\]/ %
+
 # navigate iterate through the search result:
 cn - next match
 cp - previous match
