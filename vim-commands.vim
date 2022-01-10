@@ -11,13 +11,17 @@ Ctrl-i - to the next buffer
 ##############################################################################
 #### Search in current buffer
 
-* - will search the current word forward
+* - will search the current word (under the cursor) forward
 # - will search the current word backward
 / - will search the user input forward
 ? - will search the user input backward
 
 # search and replace: "gc" global and confirm
 :%s/from string/to string/gc
+
+# to search for visually selected text, we will need create a
+# map in visual mode.
+:vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 ##############################################################################
 #### some tips for the grep.
