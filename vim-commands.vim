@@ -22,6 +22,8 @@ Ctrl-i - to the next buffer
 # to search for visually selected text, we will need create a
 # map in visual mode.
 :vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+# This post (https://vim.fandom.com/wiki/Search_for_visually_selected_text)
+# has a lot more advanced way to serch visually selected text
 
 ##############################################################################
 #### some tips for the grep.
