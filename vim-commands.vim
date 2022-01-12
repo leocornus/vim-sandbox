@@ -46,9 +46,16 @@ grep -rE --include=*.java --exclude='*/target/*' '(interface\|class) LotService'
 # find all methods in current file:
 :vimgrep /public\|protected\|private\s\w\s\w(/ %
 
-# find all sections in an ini file
+# find all sections parts in an ini file
 # buildout config .cfg file is using ini format.
+# for example:
+# [buildout]
+# 
 :vimgrep /\[.\+\]/ %
+
+# search a line starts with a whitespace,
+# for example search a line starts with at less one whitespace and ServerName:
+:vimgrep /^ \+ServerName/ %
 
 # navigate iterate through the search result:
 cn - next match
