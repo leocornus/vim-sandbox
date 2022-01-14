@@ -118,6 +118,19 @@ copen - load the quickfix to show all matches
 :unmap gc
 
 ##############################################################################
+#### work with bash
+
+# execute current line as bash command.
+# . will get the current line
+:.w !bash
+# we could map this to .br
+:nnoremap .br :.w !bash<CR>
+
+# read current date time to next line.
+# execute the date bash command.
+:r!date
+
+##############################################################################
 #### vim window management.
 
 # split buffer
