@@ -109,7 +109,7 @@ copen - load the quickfix to show all matches
 :nnoremap sb :b <C-R><C-W>
 
 # map "sc" to search current word in current buffer.
-:nnoremap sc :vimgrep /<C-R><C-W>/ %
+:nnoremap ,sc :vimgrep /<C-R><C-W>/ %
 
 ####################
 # How to unmap a map.
@@ -123,8 +123,17 @@ copen - load the quickfix to show all matches
 # execute current line as bash command.
 # . will get the current line
 :.w !bash
-# we could map this to .br
-:nnoremap .br :.w !bash<CR>
+# we could map this to ,br
+# . is used to repeat previous action.
+:nnoremap ,br :.w !bash<CR>
+
+# copy current line to clipboard
+# this is working for MacOS
+:.w !pbcopy
+
+# w works perfectly with visual mode.
+# after select anything in visual mode, we could write them to the clipboard:
+:w !pbcopy
 
 # read current date time to next line.
 # execute the date bash command.
