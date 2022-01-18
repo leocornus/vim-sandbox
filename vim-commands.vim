@@ -135,8 +135,8 @@ copen - load the quickfix to show all matches
 # after select anything in visual mode, we could write them to the clipboard:
 :w !pbcopy
 
-# read current date time to next line.
-# execute the date bash command.
+# For example:
+# read current date time to next line by executing the date bash command.
 :r!date
 
 ##############################################################################
@@ -152,6 +152,10 @@ copen - load the quickfix to show all matches
 
 # resize the current window vertically.
 :vertical resize +20
+
+# switch windows:
+C-w hjkl # switch to the window of the direction: hjkl
+C-w C-w  # switch to the next window and looping
 
 ##############################################################################
 #### fold and expand
