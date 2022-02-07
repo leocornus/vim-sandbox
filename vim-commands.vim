@@ -157,6 +157,17 @@ copen - load the quickfix to show all matches
 C-w hjkl # switch to the window of the direction: hjkl
 C-w C-w  # switch to the next window and looping
 
+# To change two vertically split windows to horizonally split
+Ctrl-w t Ctrl-w K
+
+# Horizontally to vertically:
+Ctrl-w t Ctrl-w H
+
+# Explanations:
+# Ctrl-w t makes the first (topleft) window current
+# Ctrl-w K moves the current window to full-width at the very top
+# Ctrl-w H moves the current window to full-height at far left
+
 ##############################################################################
 #### fold and expand
 
