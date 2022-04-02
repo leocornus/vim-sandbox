@@ -28,3 +28,11 @@ set expandtab
 " zd - delete folding
 "==============================================================================
 set foldmethod=manual
+
+"nnoremap \gs :grep -rE --include=*.java --exclude='*/target/*' '<cword>' .
+nnoremap \gs :grep -rE --include=*.java --exclude='*/target/*' '<C-R><C-W>' .
+"nnoremap gS :grep -rE --include=*.java --exclude='*/target/*' '<cword>' .<CR>
+" map "gc" to the grep search which has the class/interface definition
+"nnoremap gc :grep -rE --include=*.java --exclude='*/target/*' '(class\\|interface) <cword>' .
+nnoremap \gc :grep -rE --include=*.java --exclude='*/target/*' '(class\\|interface) <C-R><C-W>' .
+"nnoremap gC :grep -rE --include=*.java --exclude='*/target/*' '(class\\|interface) <cword>' .<CR>
