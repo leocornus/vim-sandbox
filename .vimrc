@@ -36,3 +36,6 @@ nnoremap \gs :grep -rE --include=*.java --exclude='*/target/*' '<C-R><C-W>' .
 "nnoremap gc :grep -rE --include=*.java --exclude='*/target/*' '(class\\|interface) <cword>' .
 nnoremap \gc :grep -rE --include=*.java --exclude='*/target/*' '(class\\|interface) <C-R><C-W>' .
 "nnoremap gC :grep -rE --include=*.java --exclude='*/target/*' '(class\\|interface) <cword>' .<CR>
+
+" run current line as bash
+nnoremap \rb :.w !bash<CR>
