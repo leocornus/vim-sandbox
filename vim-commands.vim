@@ -43,6 +43,10 @@ grep -rE --include=*.java --exclude='*/target/*' '(interface\|class) LotService'
 # load the match file from the quickfix list panel (:copen)
 :grep -lr --include=*.java --exclude="*/target/*" 'class MLotMessage' .
 
+# the exclude-dir option works better.
+# the following command will exclude both target and classes directories
+:grep -lr --include=*.java --exclude-dir={target,classes} 'class MLotMessage' .
+
 # find all methods in current file:
 :vimgrep /public\|protected\|private\s\w\s\w(/ %
 
