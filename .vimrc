@@ -29,13 +29,21 @@ set expandtab
 "==============================================================================
 set foldmethod=manual
 
-"nnoremap \gs :grep -rE --include=*.java --exclude='*/target/*' '<cword>' .
-nnoremap \gs :grep -rE --include=*.java --exclude='*/target/*' '<C-R><C-W>' .
+" providing a list of different options.
+nnoremap \gs :grep -rE --include=*.java --exclude-dir={target,classes} '<C-R><C-W>' .
 "nnoremap gS :grep -rE --include=*.java --exclude='*/target/*' '<cword>' .<CR>
 " map "gc" to the grep search which has the class/interface definition
 "nnoremap gc :grep -rE --include=*.java --exclude='*/target/*' '(class\\|interface) <cword>' .
-nnoremap \gc :grep -rE --include=*.java --exclude='*/target/*' '(class\\|interface) <C-R><C-W>' .
+nnoremap \gc :grep -rE --include=*.java --exclude-dir={target,classes} '(enum\\|class\\|interface) <C-R><C-W>' .
 "nnoremap gC :grep -rE --include=*.java --exclude='*/target/*' '(class\\|interface) <cword>' .<CR>
+
+" show the easier way to set up include.
+" search Java class with multiple file type includes.
+nnoremap \gg :grep -rE --include={*.java,pom.xml} --exclude-dir={target,classes} '(enum\\|class\\|interface) <C-R><C-W>' .
 
 " run current line as bash
 nnoremap \rb :.w !bash<CR>
+
+" list all methods / members in current Java file
+" \\ will be the \!
+nnoremap \lm :vimgrep /public\\|private\\|protected / %<CR>
