@@ -178,6 +178,7 @@ Ctrl-w t Ctrl-w H
 zf - create fold, it can be used in virtual mode,
 zc - collapse fold
 zo - expand fold
+zd - delete fold at the cursor
 
 ##############################################################################
 #### session management
